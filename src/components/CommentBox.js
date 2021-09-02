@@ -11,10 +11,7 @@ class CommentBox extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    actions.saveComment(this.state.comment);
-    
-    // save comment
+    this.props.saveComment(this.state.comment);
     this.setState({comment: ''});
   }
 
@@ -31,4 +28,4 @@ class CommentBox extends React.Component {
   }
 }
   
-export default connect(null, {actions})(CommentBox);
+export default connect(null, actions)(CommentBox);
